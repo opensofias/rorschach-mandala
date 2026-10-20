@@ -36,3 +36,7 @@ const sym = {
 }
 
 // todo: mutate functions
+
+// todo: attractor/repulsor loop
+
+// todo: renderer
