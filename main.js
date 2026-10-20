@@ -6,6 +6,7 @@ const randomPattern = (x, y) => {
         result [iter] = Math.random () > .5
         iter++
     }
+    return result
 }
 
 // untested
@@ -16,6 +17,7 @@ const compare = (pattern1, pattern2, x, y) => {
         similarity += pattern1 [iter] == pattern2 [iter] 
         iter++
     }
+    return similarity
 }
 
 // todo: symmery transforms
@@ -54,3 +56,6 @@ const sym = {
 // todo: attractor/repulsor loop
 
 // todo: renderer
+
+window.compare = compare
+window.randomPattern = randomPattern
