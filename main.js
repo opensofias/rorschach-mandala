@@ -1,5 +1,12 @@
-// todo: generated random pattern
-const randomPattern = (x, y) => {}
+// untested
+const randomPattern = (x, y) => {
+    const result = new Int8Array (x * y)
+    let iter = 0
+    while (iter < x * y) {
+        result [iter] = Math.random () > .5
+        iter++
+    }
+}
 
 // todo: compares two patterns
 const compare = (pattern1, pattern2) => {}
