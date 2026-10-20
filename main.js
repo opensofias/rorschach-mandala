@@ -8,8 +8,15 @@ const randomPattern = (x, y) => {
     }
 }
 
-// todo: compares two patterns
-const compare = (pattern1, pattern2) => {}
+// untested
+const compare = (pattern1, pattern2, x, y) => {
+    let similarity = 0
+    let iter = 0
+    while (iter < x * y) {
+        similarity += pattern1 [iter] == pattern2 [iter] 
+        iter++
+    }
+}
 
 // todo: symmery transforms
 const sym = {
