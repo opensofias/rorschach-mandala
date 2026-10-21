@@ -23,7 +23,13 @@ const compare = (pattern1, pattern2, x, y) => {
 // todo: symmery transforms
 const sym = {
     hFlip : (pattern, x, y) => {
-        // todo
+        const result = new Int8Array(x * y)
+        let iter = 0
+        while (iter < x * y) {
+            result[iter] = pattern [(x - iter % x) + Math.floor (iter / x)]
+            iter++
+        }
+        return result
     },
     vFlip : (pattern, x, y) => {
         // todo
@@ -57,5 +63,6 @@ const sym = {
 
 // todo: renderer
 
+// exposing components for testing
 window.compare = compare
 window.randomPattern = randomPattern
