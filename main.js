@@ -22,19 +22,9 @@ const compare = (pattern1, pattern2, x, y) => {
 }
 
 // todo: symmery transforms
-const sym = {
-	hFlip : (pattern, x, y) => {
-		const result = new Int8Array(x * y)
-		let iter = 0
-		while (iter < x * y) {
-			result[iter] = pattern [(x - iter % x) + Math.floor (iter / x)]
-			iter++
-		}
-		return result
-	},
-	vFlip : (pattern, x, y) => {
-		// todo
-	},
+const sym = ({xSize, ySize}) => ({
+	hFlip : pattern => ({x, y}) => pattern ({x, y : ySize - y - 1}),
+	vFlip : pattern => ({x, y}) => pattern ({x : xSize - x - 1, y}),
 	xySwap : (pattern, x, y) => {
 		// todo
 	},
@@ -56,7 +46,7 @@ const sym = {
 	vQuarterPush: (pattern, x, y) => {
 		// todo
 	},
-}
+})
 
 // todo: mutate functions
 
